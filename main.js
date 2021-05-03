@@ -1,5 +1,7 @@
-//const ps = require("prompt-sync");
-//const prompt = ps();
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
 
 function Fibonacci(number){
     if (number<=1)
@@ -7,8 +9,8 @@ function Fibonacci(number){
     return Fibonacci(number-1) + Fibonacci(number-2);
 }
 
-var Number=10
-var x=Fibonacci(Number);
-console.log("Fibonacci of " + Number + " is " + x)
+readline.question("Enter a number:\n" , Number=> { 
+    console.log("Fibonacci of " + Number + " is " + Fibonacci(Number))
+    readline.close()
+})
 
-//let Number= prompt("Enter a number: ");
